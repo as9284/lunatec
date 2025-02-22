@@ -3,3 +3,9 @@
 @theme {
   --font-sans: "Inter", sans-serif;
 }
+
+@layer {
+  body {
+    @apply bg-neutral-100 text-gray-900;
+  }
+}
