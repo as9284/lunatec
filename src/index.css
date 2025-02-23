@@ -9,3 +9,7 @@
     @apply bg-neutral-100 text-gray-900;
   }
 }
+
+@utility custom-container {
+  @apply w-full min-h-dvh flex justify-center items-center p-4;
+}

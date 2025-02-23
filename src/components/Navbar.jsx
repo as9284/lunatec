@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 import { AnimatePresence, motion } from "framer-motion";
@@ -9,6 +9,20 @@ export const Navbar = () => {
   const isMobile = useMediaQuery({ maxWidth: 900 });
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navLinks = [
     { name: "Home", path: "/" },
@@ -34,8 +48,12 @@ export const Navbar = () => {
   };
 
   return (
-    <nav className="w-full absolute top-0 bg-neutral-100 flex justify-between items-center py-4 px-8 z-50">
-      <h3 className="text-3xl font-medium">Lunatec</h3>
+    <nav
+      className={`w-full fixed ${
+        isScrolled ? "bg-neutral-100 shadow-md" : "bg-neutral-100"
+      } top-0 transition-all duration-300 flex justify-between items-center py-4 px-8 z-50`}
+    >
+      <h3 className="text-3xl font-bold">Lunatec</h3>
 
       <div className="flex items-center space-x-4">
         {/* Mobile Menu Icon */}
