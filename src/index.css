@@ -11,5 +11,9 @@
 }
 
 @utility custom-container {
-  @apply w-full min-h-dvh flex justify-center items-center p-4;
+  @apply relative w-full min-h-dvh flex flex-col justify-center items-center p-4;
+}
+
+@utility main-btn {
+  @apply w-36 h-12 bg-blue-500 rounded text-neutral-100 font-medium shadow-sm cursor-pointer duration-300 hover:bg-blue-600 focus:bg-blue-600 active:scale-95 active:bg-blue-700;
 }
