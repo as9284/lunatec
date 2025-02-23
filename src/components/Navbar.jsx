@@ -53,7 +53,7 @@ export const Navbar = () => {
         isScrolled ? "bg-neutral-100 shadow-md" : "bg-neutral-100"
       } top-0 transition-all duration-300 flex justify-between items-center py-4 px-8 z-50`}
     >
-      <h3 className="text-3xl font-bold">Lunatec</h3>
+      <h3 className="text-3xl font-bold select-none">Lunatec</h3>
 
       <div className="flex items-center space-x-4">
         {/* Mobile Menu Icon */}
