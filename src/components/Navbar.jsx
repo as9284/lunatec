@@ -87,7 +87,7 @@ export const Navbar = () => {
 
       {/* Cart Dropdown */}
       {isCartOpen && (
-        <div className="absolute top-16 right-4 w-56 bg-neutral-100 shadow-sm rounded-lg p-4 overflow-hidden">
+        <div className="absolute top-16 right-4 w-56 bg-neutral-100 shadow-md rounded-lg p-4 overflow-hidden">
           <p>Your cart is empty</p>
         </div>
       )}
